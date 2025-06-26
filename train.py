@@ -1,9 +1,8 @@
 import numpy as np
 from sklearn.datasets import fetch_openml
 
-lr = 0.5  # taxa de aprendizado
-epochs = 50  # número de epochs
-m = X.shape[1]  # número de amostras
+# ============================
+# CARREGAMENTO DOS DADOS
 
 # função de perda cross-entropy para classificação multiclasse
 def cross_entropy_loss(Y, A2):
@@ -30,8 +29,6 @@ def softmax(z):
 def relu(x):
     return np.maximum(0, x)
 
-# ============================
-# CARREGAMENTO DOS DADOS
 
 # carrega o dataset MNIST (784 pixels por imagem, 70.000 imagens)
 mnist = fetch_openml('mnist_784', as_frame=False, parser='liac-arff')
@@ -42,6 +39,10 @@ X = mnist['data'].T / 255.0
 # converte os rótulos para inteiros e depois para one-hot
 y = mnist['target'].astype(int)
 Y = one_hot_encode(y)
+
+lr = 0.2  # taxa de aprendizado
+epochs = 100  # número de epochs
+m = X.shape[1]  # número de amostras
 
 # ============================
 # INICIALIZAÇÃO DE PESOS
