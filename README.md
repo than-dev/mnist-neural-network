@@ -1,4 +1,4 @@
-![Neural Network Flow Diagram](./rede-neural-flow.png)
+![Neural Network Flow Diagram](./rede-neural-mnist.png)
 
 # MNIST Handwritten Digit Recognition Neural Network
 
